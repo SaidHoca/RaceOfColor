@@ -19,9 +19,14 @@ public class CrashControl : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-
-        other.transform.position = new Vector3(0, 0, other.transform.position.z + 90);
-
-
+        if ( other.transform.tag == "zemin")
+        {
+            other.transform.position = new Vector3(0, 0, other.transform.position.z + 90);
+        }
+        else
+        {
+            Destroy(other.gameObject);
+        }
+        
     }
 }
